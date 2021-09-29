@@ -3,7 +3,7 @@
 {% block title_body %} Product Details {% endblock %}
 {% block body_block %}
 <div class="container my-5">
-    <div class="card">
+    <div class="shadow p-3 mb-5 bg-white rounded">
         <div class="row">
             <aside class="col-sm-5 border-right">
                 <article class="gallery-wrap">
@@ -23,12 +23,14 @@
                         </span>
                     </p>
                     <dl class="item-property">
-                        <dt class="">Description</dt>
+                        <dt class="text-uppercase">Description</dt>
                         <dd>
                             <p>{{object.detail_text|linebreaks}}</p>
                         </dd>
                     </dl>
-                    <a href="{% url 'App_Order:add' pk=object.pk %}" class="btn btn-lg btn-outline-primary text-uppercase"><i class="fas fa-shopping-cart">Add to Cart</i></a>
+                    <a href="{% url 'App_Order:add' pk=object.pk %}"
+                        class="btn btn-outline-warning btn-lg text-uppercase"><i class="fas fa-shopping-cart"> Add to
+                            Cart</i></a>
                 </article>
             </aside>
         </div>

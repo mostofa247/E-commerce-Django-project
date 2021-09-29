@@ -2,9 +2,9 @@
 {% load crispy_forms_tags %}
 {% block title_body %} Orders Details {% endblock %}
 {% block body_block %}
-<div class="container mt-5">
-    <h2 class="text-center"><strong>Your Orders</strong></h2>
-    <div class="row">
+<div class="container mt-5 shadow p-3 mb-5 bg-dark rounded">
+    <h2 class="text-center text-warning"><strong>Your Orders</strong></h2>
+    <div class="row ">
         <div class="col-md-12">
             <div class="card mt-5" style="height:auto;">
                 <div class="table-responsive">
@@ -21,11 +21,11 @@
                             {% for order in orders %}
                             <tr>
                                 <th scope="row">{{ forloop.counter }}</th>
-                                <td><a href="">{{ order.orderId }}</a></td>
+                                <td><a href="" class="text-decoration-none text-dark">{{ order.orderId }}</a></td>
                                 <td>
                                     {% for item in order.orderitems.all %} {{item}} <br> {% endfor %}
                                 </td>
-                                <td><span class="badge badge-primary text-dark">Processing Your Order</span></td>
+                                <td><span class="badge badge-primary bg-warning text-light">Processing Your Order</span></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="col-md-12 my-5 text-center">
-            <a href="{% url 'App_Shop:home' %}" class="text-decoration-none">Back To Home</a>
+            <a href="{% url 'App_Shop:home' %}" class="text-decoration-none"><h4 class="text-warning">Back To Home</h4></a>
         </div>
     </div>
 </div>
